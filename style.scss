@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+//Colors
+$primary-color: #00B0D7;
+$accent-color: #FF6060;
+$dark: #001B2F;
+$light: #fff;
+$display-dark: #00223A;
+$display-light: #FAFAFA;
+$actions-light: #E9F6FF;
+$actions-dark: #001b2f;
+
+// Smoothness
+$smoothness: all 0.3s ease-in-out;
+
+* {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+//  Calculator  --------------------------------
+
+.calculator {
+  position: relative;
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 8px 32px 64px rgba(0, 0, 0, 0.3);
+  transition: $smoothness;
+}
+
+.calculator-display {
+  padding: 20px 24px 44px 24px;
+  margin-bottom: -24px;
+  background-color: $display-light;
+  text-align: right;
+  transition: $smoothness;
+}
+
+.calculator-display-history {
+  display: inline-block;
+  height: 26px;
+  font-size: 24px;
+}
+
+.calculator-display-history span {
+  display: inline-block;           /* Зберігає цілісність чисел */
+}
+
+.calculator-display-history strong {
+  font-weight: 400;
+  color: $accent-color;
+}
+
+.calculator-display-total {
+  height: 43px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.calculator-actions {
+  user-select: none;
+  padding: 16px;
+  border-radius: 20px;
+  background-color: $actions-light;
+  font-size: 24px;
+  transition: $smoothness;
+}
+
+.calculator-actions-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculator-actions-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  $size: 64px;
+  width: $size;
+  height: $size;
+}
+
+.img-history {
+  pointer-events: none;
+  width: 30px;
+  height: 30px;
+}
+
+.calculator-history-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  padding: 20px 24px 44px 24px;
+  background-color: $light;
+  color: $dark;
+  transition: $smoothness;
+}
+
+.calculator-history-panel.open {
+  top: 0;
+}
+
+.calculator-history-panel-close {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  background-color: $light;
+  top: 15px;
+  left: 15px;
+  border-radius: 10px;
+}
+
+.calculator-history-panel-close img {
+  $size: 20px;
+  width: $size;
+  height: $size;
+}
+
+.calculator-history-panel-content {
+  text-align: right;
+}
+
+.calculator-history-panel-content > div:not(:last-child){
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid $dark;
+}
+
+.calculator-actions-col-reset {
+  color: $accent-color;
+}
+
+.calculator-actions-col-action {
+  color: $primary-color;
+}
+
+//  Calculator dark theme ---------------------------------
+
+.calculator-dark {
+  color: $light;
+  transition: $smoothness;
+}
+
+.calculator-dark .calculator-display {
+  background-color: $display-dark;
+  transition: $smoothness;
+}
+
+.calculator-dark .calculator-actions {
+  background-color: $actions-dark;
+  transition: $smoothness;
+}
+
+.calculator-dark .calculator-history-panel {
+  background-color: $dark;
+  color: $light;
+}
+
+.calculator-dark .calculator-history-panel-content > div:not(:last-child) {
+  border-color: $light;
+}
+
+// Change Theme
+
+.calculator-theme {
+  $size: 20px;
+  $offset: 10px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  font-size: $size;
+  color: $light;
+  top: $offset;
+  left: $offset;
+  width: $size;
+  height: $size;
+  transition: $smoothness;
+}
+
+.calculator-theme img {
+  $size: 20px;
+  width: $size;
+  height: $size;
+}
