@@ -1,3 +1,8 @@
 .sass-cache
 style.css.map
 style.css
+.eslintrc.json
+.prettierrc
+package.json
+package-lock.json
+node_modules

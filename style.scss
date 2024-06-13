@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 //Colors
-$primary-color: #00B0D7;
-$accent-color: #FF6060;
-$dark: #001B2F;
+$primary-color: #00b0d7;
+$accent-color: #ff6060;
+$dark: #001b2f;
 $light: #fff;
-$display-dark: #00223A;
-$display-light: #FAFAFA;
-$actions-light: #E9F6FF;
+$display-dark: #00223a;
+$display-light: #fafafa;
+$actions-light: #e9f6ff;
 $actions-dark: #001b2f;
 
 // Smoothness
@@ -51,7 +51,7 @@ body {
 }
 
 .calculator-display-history span {
-  display: inline-block;           /* Зберігає цілісність чисел */
+  display: inline-block; /* Зберігає цілісність чисел */
 }
 
 .calculator-display-history strong {
@@ -134,7 +134,7 @@ body {
   text-align: right;
 }
 
-.calculator-history-panel-content > div:not(:last-child){
+.calculator-history-panel-content > div:not(:last-child) {
   padding-bottom: 8px;
   margin-bottom: 8px;
   border-bottom: 1px solid $dark;
