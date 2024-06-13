@@ -9,13 +9,9 @@ let tempNumber = '0';
 // Обробка подій натискання кнопок та їх обробка
 calculator.addEventListener('click', (event) => {
   const target = event.target;
-  const isCalculatorAction = target.classList.contains(
-    'calculator-actions-col'
-  );
+  const isCalculatorAction = target.classList.contains('calculator-actions-col');
   const totalBlock = calculator.querySelector('.calculator-display-total');
-  const displayHistoryBlock = calculator.querySelector(
-    '.calculator-display-history'
-  );
+  const displayHistoryBlock = calculator.querySelector('.calculator-display-history');
 
   if (isCalculatorAction) {
     const data = target.dataset.type;
@@ -32,16 +28,16 @@ calculator.addEventListener('click', (event) => {
 function getOperationType(data) {
   const operators = ['+', '-', '/', '*'];
   const actions = {
-    float: () => {
+    'float': () => {
       if (tempNumber.indexOf('.') === -1) {
         tempNumber += tempNumber ? '.' : '0.';
       }
     },
-    delete: () => {
+    'delete': () => {
       tempNumber = tempNumber.substring(0, tempNumber.length - 1);
       tempNumber = tempNumber ? tempNumber : '0';
     },
-    clear: () => {
+    'clear': () => {
       if (calculatorClearBlock.innerText === 'C') {
         calculatorClearBlock.innerText = 'AC';
         displayHistory = [];
@@ -62,7 +58,7 @@ function getOperationType(data) {
       allHistory.push(historySegment);
       displayHistory = [];
     },
-    history: () => {
+    'history': () => {
       // Відкриття панелі історії
       historyPanel.classList.add('open');
     },
